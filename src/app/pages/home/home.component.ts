@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
     navArrows
     
 
-    constructor() { }
+    constructor(translate: TranslateService) {}
 
     ngOnInit() {
         

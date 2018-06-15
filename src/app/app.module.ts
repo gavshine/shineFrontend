@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { ParticlesModule } from 'angular-particle';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +22,10 @@ const appRoutes: Routes = [
   { path: 'services', component: ServicesComponent },
 ];
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -33,10 +40,18 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     ParticlesModule,
-   RouterModule.forRoot(
+    RouterModule.forRoot(
       appRoutes
     ),
-   AngularFontAwesomeModule,
+    HttpClientModule,
+    AngularFontAwesomeModule,
+    TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
   ],
   providers: [],
   bootstrap: [AppComponent]
