@@ -1,12 +1,12 @@
 <button (click)="switchLanguage('en')">en</button>
 
 <button (click)="switchLanguage('fr')">fr</button>
+<a routerLink="/login"  routerLinkActive="active">Login</a>
 <div>
 	<app-nav></app-nav>
 </div>
 <div class="container-fluid">
+	<app-alert></app-alert>
 	<router-outlet></router-outlet>
-	<router-outlet name="popup"></router-outlet>
-
 	<app-footer></app-footer>
 </div>
