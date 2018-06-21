@@ -1,5 +1,12 @@
 {
     "home": {
-        "title": "Shine CSL en"
+        "title": "Shine CSL"
+    },
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "contact": "Contact us",
+        "close" : "Close"
     }
 }

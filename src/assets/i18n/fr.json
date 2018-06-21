@@ -1,5 +1,12 @@
 {
     "home": {
         "title": "Shine CSL fr"
+    },
+    "nav": {
+        "home": "Acceuil",
+        "services": "Services",
+        "about": "A propos",
+        "contact": "Contact",
+        "close" : "Fermer"
     }
 }

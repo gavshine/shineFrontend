@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +13,8 @@ export class NavComponent implements OnInit {
   toggle_close_text = 'Close'; 
   active = false;  
     
-  constructor() { }
+  constructor(translate: TranslateService) { 
+  }
 
   ngOnInit() {
     this.toggle = document.querySelectorAll(".toggle")[0];
@@ -21,7 +23,7 @@ export class NavComponent implements OnInit {
   }
     
    openMenu(active){
-       console.log(active);
+       //console.log(active);
        //console.log(this.nav);
        //alert(JSON.stringify(event.target.classList));
        this.nav.classList.toggle('open');

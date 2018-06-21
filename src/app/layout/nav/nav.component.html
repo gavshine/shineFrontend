@@ -1,12 +1,12 @@
 <nav class="top-right">
 	<a class="disc l1" routerLink="/"  routerLinkActive="active">
-		<div>Home</div>
+		<div [translate]="'nav.home'">Home</div>
 	</a> <a class="disc l2" routerLink="/services">
-		<div>Services</div>
+		<div [translate]="'nav.services'">Services</div>
 	</a> <a class="disc l3" routerLink="/about">
-		<div>About us</div>
+		<div [translate]="'nav.about'">About us</div>
 	</a> <a class="disc l4" routerLink="/contact">
-		<div>Contact us</div>
+		<div [translate]="'nav.contact'">Contact us</div>
 	</a> 
-	<a class="disc l5 toggle" (click)="openMenu(active)"></a>
+	<a class="disc l5 toggle" (click)="openMenu(active)"><i class="fa fa-window-close" aria-hidden="true"></i></a>
 </nav>
